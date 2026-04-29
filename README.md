@@ -1,35 +1,66 @@
-# dasheats-temp
+# DashEats — Restaurant Management System
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+A full-stack food ordering and restaurant management web app built with **Next.js** and **TypeScript**, backed by a complete DevOps pipeline.
 
-## Built with v0
+**Live:** [dasheats-tempo.vercel.app](https://dasheats-tempo.vercel.app/)
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+---
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_xejj25GRjhITUo3KMOnsBZgLaBjr)
+## Features
+
+- Browse menu & place food orders
+- Admin panel to manage menu items
+- Analytics dashboard for orders & revenue
+- Fully responsive UI
+
+---
+
+## Tech Stack
+
+**Frontend:** Next.js 15, TypeScript, Tailwind CSS, shadcn/ui
+
+**DevOps:**
+- **Git** — Version control
+- **Jenkins** — CI/CD pipeline (`Jenkinsfile`)
+- **Maven / Gradle** — Build & dependency management
+- **Docker** — Containerization (`Dockerfile`, `docker-compose.yml`)
+- **Kubernetes** — Container orchestration (`/k8s`)
+- **Ansible** — Server automation & configuration (`/ansible`)
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/baymax31-tadashi/dasheats-tempo.git
+cd dasheats-tempo
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with Docker:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+docker-compose up --build
+```
 
-## Learn More
+---
 
-To learn more, take a look at the following resources:
+## CI/CD Pipeline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+The Jenkins pipeline (`Jenkinsfile`) runs: **Checkout → Build → Test → Dockerize → Deploy to K8s → Ansible Config**
 
-<a href="https://v0.app/chat/api/kiro/clone/baymax31-tadashi/dasheats-temp" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+---
+
+## Project Structure
+
+```
+├── app/          # Next.js pages
+├── components/   # UI components
+├── ansible/      # Ansible playbooks
+├── k8s/          # Kubernetes manifests
+├── postman/      # API collections
+├── Dockerfile
+├── docker-compose.yml
+└── Jenkinsfile
+```
